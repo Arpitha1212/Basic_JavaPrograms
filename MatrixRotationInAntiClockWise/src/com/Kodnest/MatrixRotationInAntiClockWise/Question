@@ -1,0 +1,67 @@
+Write a java program to do matrix rotation in anti-clockwise and print the array contents before rotation.
+==============================================================================================
+package com.Kodnest.MatrixRotationInAntiClockWise;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the size of the array ");
+		int arr[] = new int[scan.nextInt()];
+		
+		System.out.println("Enter the contents of the array");
+		for(int i=0;i<=arr.length-1;i++) 
+		{
+			arr[i]=scan.nextInt();
+		}
+		
+		System.out.println("Enter the array elements before rotation");
+		for(int i=0;i<=arr.length-1;i++) 
+		{
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		 System.out.println("Enter the number of rotation n");
+		 int n=scan.nextInt();
+		 RotationApp ra = new RotationApp();
+		 ra.rotation(arr, n);
+		 
+		 System.out.println("Enter the elements after rotation");
+		 for(int i=0;i<=arr.length-1;i++) 
+			{
+			 System.out.print(arr[i]+" ");
+			}
+				
+	}
+
+}
+package com.Kodnest.MatrixRotationInAntiClockWise;
+
+public class RotationApp {
+	public  void rotation(int arr[],int n) 
+	{
+		for(int count=1;count<=n;count++) 
+		{
+			int temp=arr[0];
+			for(int i=1;i<=arr.length-1;i++) 
+			{
+				arr[i-1]=arr[i];
+			}
+			arr[arr.length-1]=temp;
+		}
+	}
+
+}
+=======================================================================================================
+output:
+Enter the size of the array 
+5
+Enter the contents of the array
+1 2 3 4 5
+Enter the array elements before rotation
+1 2 3 4 5 
+Enter the number of rotation n
+2
+Enter the elements after rotation
+3 4 5 1 2 

@@ -1,0 +1,3 @@
+Discount Applicability
+
+Question Description: Create a program that checks if the purchase is above $100 and prints "Discount Applicable". The program should accept a double 'purchaseAmount' as input.
