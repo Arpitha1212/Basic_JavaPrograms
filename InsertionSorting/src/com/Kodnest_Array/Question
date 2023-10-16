@@ -1,0 +1,66 @@
+Problem:
+Write a java program to perform insertion sorting.
+========================================================================
+package com.Kodnest_Array;
+import java.util.Scanner;
+public class InsertionSorting 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner (System.in);
+		System.out.println("Enter the size of the elements ");
+		int arr[]= new int[scan.nextInt()];
+		
+		for(int i=0;i<=arr.length-1;i++)
+		{
+			System.out.println("Enter the array contents ");
+			arr[i]= scan.nextInt();
+		}
+		System.out.print("Array elements before sorting ");
+		for(int i =0;i<=arr.length-1;i++) {
+			System.out.print(arr[i]+" ");
+					
+		}
+		SortingApp Sort=new SortingApp();
+		Sort.sort(arr);
+		  
+		 System.out.println();
+		 System.out.print("Array elements after sorting ");
+			for(int i =0;i<=arr.length-1;i++)
+			{
+				System.out.print(arr[i]+" ");
+			}
+	}
+}
+package com.Kodnest_Array;
+public class SortingApp {
+	public void sort(int arr[]) {
+		int item;
+		for(int i=1;i<=arr.length-1;i++) {
+			item=arr[i];
+			int j=i-1;
+			while((j>=0) && (arr[j]>item)) 
+			{
+				arr[j+1]=arr[j];
+				j--;
+			}
+			arr[j+1]= item;
+		}
+	}
+}
+============================================================================
+Output:
+Enter the size of the elements 
+5
+Enter the array contents 
+86
+Enter the array contents 
+42
+Enter the array contents 
+23
+Enter the array contents 
+18
+Enter the array contents 
+25
+Array elements before sorting 86 42 23 18 25 
+Array elements after sorting 18 23 25 42 86 

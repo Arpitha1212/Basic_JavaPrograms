@@ -1,0 +1,80 @@
+Problem:
+ 
+write a java program to perform binary search in array.
+
+===============================================================================================
+package com.Kodnest.Arrays;
+import java .util.Scanner;
+public class BinarySearch {
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the size of the array");
+		int arr[] = new int[scan.nextInt()];
+		
+		for(int i =0;i<=arr.length-1;i++) 
+		{
+			System.out.println("Enter the elements of the array");
+			arr[i]= scan.nextInt();
+		}
+		System.out.println("Enter the key to search ");
+		int key = scan.nextInt();
+		SearchApp searchApp = new SearchApp();
+		int res =searchApp.BinarySearch(arr,key) ;
+		if(res>=0) 
+		{
+			System.out.println("Key found "+res);
+		}
+		else {
+			System.out.println("key not found ");
+		}
+   }
+}
+package com.Kodnest.Arrays;
+public class SearchApp 
+{
+	public int BinarySearch(int arr[],int key) 
+	{
+	int low=0;
+	int high = arr.length-1;
+	while (low<=high) 
+	{
+		int mid =(low+high)/2;
+		if(key==arr[mid]) 
+		{
+		   return mid;
+		}
+		else if(key>arr[mid]) 
+		{
+			low =mid+1;
+			high = high;
+		}
+		else
+		{
+			high = mid -1;
+			low=low;
+		}
+	 }
+	return -1;
+}
+}
+
+Output-------------------
+
+Enter the size of the array
+6
+Enter the elements of the array
+10
+Enter the elements of the array
+20
+Enter the elements of the array
+30
+Enter the elements of the array
+40
+Enter the elements of the array
+50
+Enter the elements of the array
+60
+Enter the element to be search 
+70
+key not found
